@@ -1,5 +1,6 @@
 { ... }:
 {
+# https://ipsw.me/install/Mac14,15/24D81
       disko.devices.disk.main = {
         device = "/dev/mmcblk0";
         type = "disk";

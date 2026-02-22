@@ -1,21 +1,11 @@
 { ... }:
 {
-  flake.modules.nixos.server =
-    { lib, config, ... }:
-    {
-      # boot.kernel.sysfs.module.zswap.parameters.enabled = 1;
-
       disko.devices.disk.main = {
-        device = "/dev/vda";
+        device = "/dev/mmcblk0";
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
-            boot = {
-              name = "boot";
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               size = "512M";
               type = "EF00";
@@ -44,7 +34,7 @@
                       ];
                     };
                     "/persistent" = {
-                      mountpoint = config.persist.persistentStoragePath;
+                      mountpoint = "/persistent";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"
@@ -68,5 +58,4 @@
           };
         };
       };
-    };
 }

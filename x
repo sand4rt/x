@@ -2,7 +2,10 @@
 {
 # https://updates.cdn-apple.com/2025WinterFCS/fullrestores/082-01504/828B8EF9-8134-49D5-B24A-0BA504FC5ECC/UniversalMac_15.3.2_24D81_Restore.ipsw
 
-# https://updates.cdn-apple.com/2025WinterFCS/fullrestores/072-70618/42F1A8CC-7E07-4329-958A-757FF600C303/UniversalMac_15.3.1_24D70_Restore.ipsw
+
+# 
+#sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount disk.nix
+ https://updates.cdn-apple.com/2025WinterFCS/fullrestores/072-70618/42F1A8CC-7E07-4329-958A-757FF600C303/UniversalMac_15.3.1_24D70_Restore.ipsw
             # find devices: ls -l /dev/disk/by-id/
       # find id's: lsblk -o NAME,PATH,PARTLABEL,PARTUUID,SIZE --tree --json
       # dry run: disko --mode format,mount --dry-run disk.nix
